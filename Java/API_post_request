@@ -1,0 +1,17 @@
+@PostMapping("/abracadabra")
+    public Magician abracadabra(@RequestBody Hat hat){
+        var magician = new Magician();
+        magician.transformation = "Rabbit";
+        return magician;
+    }
+}
+package com.datorium.Datorium.API;
+
+public class Magician {
+    public String transformation;
+}
+package com.datorium.Datorium.API;
+
+public class Hat {
+    public String item;
+}
