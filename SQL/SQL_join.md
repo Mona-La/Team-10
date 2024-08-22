@@ -34,3 +34,12 @@ Left Join Owners on Pets.OwnerID = Owners.OwnerID
 group by Owners.City
 Order by AverageSales;
 ```
+```sql
+SELECT Owners.City, Pets.Kind,  AVG(Procedures.Price) AS AvgSalesByCity
+FROM Sales
+LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+GROUP BY Owners.City, Pets.Kind
+ORDER BY AvgSalesByCity DESC;
+```
